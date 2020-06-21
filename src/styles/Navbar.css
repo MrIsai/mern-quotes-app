@@ -1,0 +1,40 @@
+.navbar {
+    background-color: var(--bg-primary);
+    width: 100%;
+    border-top: 5px solid black;
+    border-bottom: 5px solid black;
+}
+
+.navbar-nav {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.nav-item {
+    padding: 10px;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #000;
+}
+
+.nav-link:hover {
+    animation-name: augmentation;
+    animation-duration: 100ms;
+    animation-fill-mode: forwards;
+}
+
+@keyframes augmentation {
+    100% {
+        font-weight: 800;
+        letter-spacing: 2px;
+    }
+}

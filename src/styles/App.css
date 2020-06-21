@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+    font-family: "Playfair Display", serif;
+    font-size: 16px;
+    --width-length: 50rem;
+    --width-nav: 50rem;
+
+    --bg-primary: #f0f0f0;
+    --bg-secondary: #e0e0e0;
+}
+
+@media (max-width: 850px) {
+    :root {
+        font-size: 14px;
+        --width-length: 45rem;
+        --width-nav: 40rem;
+    }
+}
+
+@media (max-width: 750px) {
+    :root {
+        font-size: 12px;
+        --width-length: 40rem;
+        --width-nav: 30rem;
+    }
+}
+
+@media (max-width: 500px) {
+    :root {
+        font-size: 10px;
+        --width-length: 30rem;
+        --width-nav: 20rem;
+    }
+}
+
+@media (max-width: 250px) {
+    :root {
+        font-size: 8px;
+        --width-length: 20rem;
+        --width-nav: 20rem;
+    }
+}
+
+body {
+    background-color: var(--bg-primary);
+    margin: 0;
+    padding: 0;
+}
+
+body::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+header {
+    text-align: center;
+    width: auto;
+    margin: auto;
+    font-size: 1.5rem;
+}
+
+header:hover {
+    animation-name: title-animation;
+    animation-duration: 300ms;
+    animation-fill-mode: forwards;
+}
+
+@keyframes title-animation {
+    100% {
+        font-weight: 900;
+        letter-spacing: 3px;
+    }
+}
+
+.about-container {
+    margin: auto;
+    margin-top: 10rem;
+    width: var(--width-length);
+    text-align: center;
+    font-size: 1.3rem;
+    line-height: 2rem;
+}
+
+.about-title-container {
+    margin: 5%;
+    border: 2px solid black;
+}
