@@ -1,6 +1,5 @@
 import React from "react";
 import Card from "./Card";
-import "../styles/Home.css";
 
 const Home = (props) => {
     return (

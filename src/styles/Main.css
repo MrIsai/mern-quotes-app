@@ -42,6 +42,19 @@
     }
 }
 
+.home-container{
+    width: 100%;
+}
+
+.table{
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
 body {
     background-color: var(--bg-primary);
     margin: 0;
