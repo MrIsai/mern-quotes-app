@@ -1,27 +1,29 @@
-import React, { useEffect, useState } from "react";
-import auth from "../auth";
-import { Login } from "../components/login-component";
+import React, { useState } from "react";
+import { Login } from "../components/Login";
 import "../styles/Register.css";
-import { Signin } from "../components/signin-component";
+import { Signin } from "../components/Signin";
+import { Redirect } from "react-router-dom";
 
 export const Register = (props) => {
     const [toSignin, setToSignIn] = useState(false);
 
-    useEffect(() => {
-        let r = auth.isAuthenticated();
-        console.log(r);
-    }, []);
+    if (props.auth.isAuthenticated()) return <Redirect push to="/home" />;
+
     return (
         <div className="Register centered">
             <h1>Register</h1>
-            {toSignin ? <Signin /> : <Login />}
+            {toSignin ? (
+                <Signin {...props} />
+            ) : (
+                <Login {...props} />
+            )}
             <hr />
             <div className="footer">
                 <button
                     onClick={() => setToSignIn(!toSignin)}
                     className="register-button"
                 >
-                    {toSignin ? "Log in" : "Sign in"}
+                    {toSignin ? "Back" : "Sign in"}
                 </button>
             </div>
         </div>
