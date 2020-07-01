@@ -2,11 +2,15 @@ class Auth {
     constructor() {
         /* Request the logged data to server */
 
-        this.authenticated = true;
+        this.authenticated = false;
+        this.username = "default";
+        this.password = "";
     }
 
-    login(fun) {
+    login(fun, username, password) {
         this.authenticated = true;
+        this.username = username;
+        this.password = password;
         fun();
     }
 
@@ -17,6 +21,10 @@ class Auth {
 
     isAuthenticated() {
         return this.authenticated;
+    }
+
+    getUsername(){
+        return this.username;
     }
 }
 

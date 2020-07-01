@@ -17,7 +17,7 @@ export const Login = (props) => {
             !No es la mejor practica buscar uno por uno
             *Con una base de datos relacional no es necesario el siguiente codigo.
         */
-        const url = "http://localhost:3333/users/";
+        const url = "http://192.168.0.7:3333/users/";
         let response = await fetch(url, {
             method: "GET",
             mode: "cors",
@@ -35,10 +35,10 @@ export const Login = (props) => {
         userdata = userdata[0];
 
         /* Cambio el estado a registrado y redirecciona */ 
-        props.handleRegisterState();
+        props.handleRegisterState(userdata.username);
         props.auth.login(() => {
             history.push("/home");
-        });
+        }, userdata.username, userdata.password);
     };
 
     return (

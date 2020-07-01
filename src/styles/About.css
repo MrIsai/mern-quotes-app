@@ -1,15 +1,4 @@
-:root {
-    font-size: 18px;
-    --color-a: #b09535;
-    --color-b: #705f22;
-    --color-c: #f0cc47;
-    --color-d: #fcd64c;
-    --color-e: #d6b640;
-}
-
-.jumbotron{
-    font-family: 'Fira Sans',serif;
-}
+@import url('Home.css');
 
 .submit-button {
     font-family: "Fira Sans", serif;

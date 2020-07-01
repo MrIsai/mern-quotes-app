@@ -7,39 +7,54 @@
     --color-e: #d6b640;
 }
 
-.navbar-component{
-    font-family: 'Libre Baskerville', serif;
+.navbar-component {
+    font-family: "Libre Baskerville", serif;
 }
 
-.navbar-brand{
+.navbar-component:hover {
+    animation-name: navbar-animation;
+    animation-duration: 2000ms;
+    animation-fill-mode: forwards;
+}
+
+@keyframes navbar-animation {
+    100% {
+        box-shadow: 0px 0px 50px var(--color-c)
+    }
+}
+
+.navbar-brand {
     font-weight: 800;
     font-size: 1.5rem;
     position: relative;
-    left: 30px;
+    left: 20px;
     color: var(--color-c);
+    margin: 0px 50px 0px 10px;
 }
 
-.navbar-brand:hover{
+.navbar-brand:hover {
     animation-name: navbar-brand-hover-animation;
     animation-duration: 500ms;
     animation-fill-mode: forwards;
 }
 
-@keyframes navbar-brand-hover-animation{
-    100%{
+@keyframes navbar-brand-hover-animation {
+    100% {
         text-shadow: 3px 3px black;
         font-size: 1.51rem;
     }
 }
 
-a{
+.linker {
+    font-family: 'Fira Sans', serif;
     text-decoration: none;
-    color: #FFFFFF;
-    margin: 10px 50px 0px 50px;
+    color: #ffffff;
+    margin: 5px 20px 0px 20px;
 }
 
-a:hover{
+.linker:hover {
     text-decoration: none;
-    color: #FFFFFF;
+    color: #ffffff;
     font-weight: 800;
+    text-shadow: 3px 3px black;
 }
