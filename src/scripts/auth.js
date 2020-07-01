@@ -2,7 +2,7 @@ class Auth {
     constructor() {
         /* Request the logged data to server */
 
-        this.authenticated = false;
+        this.authenticated = true;
     }
 
     login(fun) {
