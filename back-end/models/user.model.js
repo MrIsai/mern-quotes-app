@@ -17,7 +17,9 @@ const userSchema = new Schema(
             minlength: 8,
         },
 
-        logged : Boolean
+        logged : Boolean,
+
+        favorites : { type : [mongoose.ObjectId] , required : false}
     },
     {
         timestamps: true,

@@ -2,7 +2,7 @@
     font-size: 18px;
     --color-a: #b09535;
     --color-b: #705f22;
-    --color-c: #f0cc47;
+    --title-color: #f0cc47;
     --color-d: #fcd64c;
     --color-e: #d6b640;
 }
@@ -19,7 +19,7 @@
 
 @keyframes navbar-animation {
     100% {
-        box-shadow: 0px 0px 50px var(--color-c)
+        box-shadow: 0px 0px 50px var(--title-color)
     }
 }
 
@@ -27,9 +27,9 @@
     font-weight: 800;
     font-size: 1.5rem;
     position: relative;
-    left: 20px;
-    color: var(--color-c);
-    margin: 0px 50px 0px 10px;
+    left: 10px;
+    color: var(--title-color);
+    margin: 0px 50px 0px 0px;
 }
 
 .navbar-brand:hover {
@@ -40,8 +40,8 @@
 
 @keyframes navbar-brand-hover-animation {
     100% {
-        text-shadow: 3px 3px black;
-        font-size: 1.51rem;
+        text-shadow: 5px 5px black;
+        font-size: 1.55rem;
     }
 }
 

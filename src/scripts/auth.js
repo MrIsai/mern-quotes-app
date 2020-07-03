@@ -3,7 +3,7 @@ class Auth {
         /* Request the logged data to server */
 
         this.authenticated = false;
-        this.username = "default";
+        this.username = "defaultuser";
         this.password = "";
     }
 

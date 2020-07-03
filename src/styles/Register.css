@@ -1,23 +1,43 @@
-
 /* Variables base */
 :root {
     font-size: 18px;
     --color-a: #b09535;
     --color-b: #705f22;
-    --color-c: #f0cc47;
+    --title-color: #f0cc47;
     --color-d: #fcd64c;
     --color-e: #d6b640;
+    --background-color: #343a40 !important;
+
+    --margintop-submit-button: 0px;
+    --marginbot-submit-button: 0px;
+}
+
+@media (max-width: 575px) {
+    :root {
+        font-size: 18px;
+        --color-a: #b09535;
+        --color-b: #705f22;
+        --title-color: #f0cc47;
+        --color-d: #fcd64c;
+        --color-e: #d6b640;
+        --background-color: #343a40 !important;
+
+        --margintop-submit-button: 15px;
+        --marginbot-submit-button: 15px;
+    }
 }
 
 body {
-    background-color: var(--color-c);
+    background-color: var(--background-color);
 }
 
 .Register {
     font-family: "Libre Baskerville", serif;
-    background-color: var(--color-d);
+    /* background-color: var(--color-d); */
     box-shadow: 0px 0px 25px rgba(45, 45, 45, 0.7);
-    background: linear-gradient(35deg, var(--color-e), var(--color-d));
+    background: linear-gradient(35deg, var(--color-a), var(--color-d));
+    border: 1px solid black;
+    border-radius: 5px;
 }
 
 .Register:hover {
@@ -38,17 +58,17 @@ h1 {
     text-align: center;
     font-weight: 800;
     padding: 20px;
-    color: #343a40!important
+    color: #343a40 !important;
 }
 
-h1:hover{
+h1:hover {
     animation-name: h1-hover-animation;
     animation-duration: 500ms;
     animation-fill-mode: forwards;
 }
 
-@keyframes h1-hover-animation{
-    100%{
+@keyframes h1-hover-animation {
+    100% {
         text-shadow: 2px 2px white;
     }
 }
@@ -68,12 +88,14 @@ h1:hover{
 .submit-button {
     font-family: "Fira Sans", serif;
     border: 2px solid black;
-    background-color: var(--color-c);
+    background-color: var(--title-color);
     border-color: var(--color-b);
     border-radius: 4px;
     font-size: 1.2rem;
     color: black;
     width: 125px;
+    margin-top: var(--margintop-submit-button);
+    margin-bottom: var(--marginbot-submit-button);
 }
 
 .submit-button:hover {
@@ -151,11 +173,15 @@ h1:hover{
 }
 
 .register-button:active {
-    background-color: var(--color-c);
+    background-color: var(--title-color);
     border-color: var(--color-e);
 }
 
 .register-button:focus {
-    background-color: var(--color-c);
+    background-color: var(--title-color);
     border-color: var(--color-e);
+}
+
+.brightness:focus, .brightness:hover{
+    box-shadow: 0px 0px 15px var(--title-color)!important;
 }

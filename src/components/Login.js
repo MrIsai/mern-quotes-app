@@ -17,7 +17,7 @@ export const Login = (props) => {
             !No es la mejor practica buscar uno por uno
             *Con una base de datos relacional no es necesario el siguiente codigo.
         */
-        const url = "http://192.168.0.7:3333/users/";
+        const url = "http://localhost:3333/users/";
         let response = await fetch(url, {
             method: "GET",
             mode: "cors",

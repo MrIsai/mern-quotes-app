@@ -6,9 +6,14 @@ export const Profile = (props) => {
         <div className="profile">
             <Jumbotron className="jumbotron">
                 <h1>Your profile</h1>
-                <p>This is a simple app that show some deep quotes.</p>
                 <p>
-                    <button className="submit-button">Learn more</button>
+                    Here you can watch or delete your stored favorite quotes and share in your
+                    socials media.
+
+                    Also you can edit your data profile.
+                </p>
+                <p>
+                    <button className="submit-button">Edit Profile</button>
                 </p>
             </Jumbotron>
         </div>

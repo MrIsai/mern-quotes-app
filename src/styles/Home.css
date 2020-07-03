@@ -1,10 +1,13 @@
+@import url('Register.css');
+
 :root {
     font-size: 18px;
     --color-a: #b09535;
     --color-b: #705f22;
-    --color-c: #f0cc47;
+    --title-color: #f0cc47;
     --color-d: #fcd64c;
     --color-e: #d6b640;
+    --background-color: #343a40 !important;
 }
 
 .jumbotron{
@@ -14,7 +17,7 @@
 .submit-button {
     font-family: "Fira Sans", serif;
     border: 2px solid black;
-    background-color: var(--color-c);
+    background-color: var(--title-color)!important;
     border-color: var(--color-b);
     border-radius: 4px;
     font-size: 1.2rem;
@@ -35,4 +38,64 @@
         color: white;
         text-shadow: 2px 2px #000;
     }
+}
+
+.desk-container{
+    margin: 1.5rem;
+    background-color: var(--background-color);
+
+    display: flex; /* flexbox */
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* the items or cards will wrap*/
+}
+
+.quote-card{
+    background: linear-gradient(35deg, var(--title-color), var(--color-d));
+    width: 400px;
+    height: 200px;
+    margin: 0.8rem;
+    border-radius: 3px;
+}
+
+.quote-card:hover{
+    animation-name: quote-card-hover-animation;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+}
+
+@keyframes quote-card-hover-animation{
+    100%{
+        box-shadow: 0px 0px 15px white;
+    }
+}
+
+.quote-card-container{
+    margin: 5px;
+    padding: 20px;
+    border: 2px solid black;
+    width: 97.5%;
+    height: 95%;
+
+    border-radius: 5px;
+
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+}
+
+.quote-card-text{
+    height: 100px;
+}
+
+.quote-card-author{
+    
+    position: relative;
+    top: 25px;
+
+    text-align: end;
+    font-weight: 500;
+    text-decoration: underline;
 }

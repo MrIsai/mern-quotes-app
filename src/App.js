@@ -35,7 +35,7 @@ function App() {
                         />
                     </Route>
                     <ProtectedRoute auth={auth} exact path="/home">
-                        <Home username={username} />
+                        <Home username={username} authenticator={auth} />
                     </ProtectedRoute>
                     <ProtectedRoute auth={auth} exact path="/about">
                         <About />

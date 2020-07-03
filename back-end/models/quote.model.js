@@ -5,7 +5,8 @@ const quoteSchema = new Schema(
     {
         quote: { type: String, required: true },
         author: { type: String, required: true },
-        username : { type: String, required: true}
+        rating: { type: Number },
+        likes : { type: Number }
     },
     {
         timestamps: true,
