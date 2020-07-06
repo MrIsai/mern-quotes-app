@@ -10,26 +10,23 @@ import { Navbar, Form, FormControl } from "react-bootstrap";
 export const Desk = (props) => {
     return (
         <div className="desk">
-            <Navbar bg="light" expand="lg">
+            <Navbar className="desk-container-navbar" bg="light" expand="lg">
                 <Navbar.Collapse
                     id="desk-navbar-nav"
                     style={{
                         display: "flex",
                         flexDirection: "row",
-                        justifyContent: "end",
-                        alignItems: "end",
+                        justifyContent: "center",
+                        alignItems: "center",
                     }}
                 >
-                    <Form inline>
+                    <Form inline onSubmit={(e) => e.preventDefault()}>
                         <FormControl
                             type="text"
-                            placeholder="Search"
-                            className="mr-sm-2 brightness"
+                            placeholder="Search by author"
+                            className="mr-sm-2 search-input"
                             onChange={props.handlerSearch}
                         />
-                        <button className="submit-button brightness">
-                            Search
-                        </button>
                     </Form>
                 </Navbar.Collapse>
             </Navbar>

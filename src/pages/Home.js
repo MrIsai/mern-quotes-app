@@ -5,22 +5,32 @@ import { Card } from "../components/Card";
 import { requestAll } from "../scripts/requestQuotes";
 import "../styles/Home.css";
 
+var re = new RegExp(
+    "^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$"
+);
+
 export const Home = (props) => {
     const [quotes, setQuotes] = useState([]);
     const [search, setSearch] = useState("");
 
-    
     const handlerQuotes = async () => {
-        console.log("Handler Quotes");
-        let quotes_arr = await requestAll();
+        const quotes_arr = await requestAll();
         setQuotes(quotes_arr);
     };
 
-    const handlerSearch = (e) => setSearch(e.target.value);
+    const handlerSearch = (e) => {
+        //console.log(`search: ${search} value: ${e.target.value} length: ${search.length}`);
+
+        /* Validating input value */
+        if (re.test(e.target.value)) {
+            setSearch(e.target.value);
+        }
+    };
 
     useEffect(() => {
+        console.log(`Rendering search: ${search}`);
         handlerQuotes();
-    }, []);
+    }, [search]);
 
     return (
         <div className="home">
@@ -37,22 +47,20 @@ export const Home = (props) => {
                 </p>
             </Jumbotron>
             <Desk handlerSearch={handlerSearch}>
-                {quotes.map((v, i) => {
-                    if (search.length <= 0)
-                        return (
-                            <Card key={i} quote={v.quote} author={v.author} />
-                        );
-                    else {
-                        if (v.author.search(search) !== -1)
-                            return (
-                                <Card
-                                    key={i}
-                                    quote={v.quote}
-                                    author={v.author}
-                                />
-                            );
-                    }
-                })}
+                {search.length <= 1
+                    ? quotes.map((v, i) => (
+                          <Card key={i} quote={v.quote} author={v.author} />
+                      ))
+                    : quotes.map((v, i) => {
+                          if (v.author.search(search) !== -1)
+                              return (
+                                  <Card
+                                      key={i}
+                                      quote={v.quote}
+                                      author={v.author}
+                                  />
+                              );
+                      })}
             </Desk>
         </div>
     );

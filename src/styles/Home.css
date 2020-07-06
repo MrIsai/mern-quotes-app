@@ -40,6 +40,17 @@
     }
 }
 
+.search-input{
+    border: 1px solid black;
+    background-color: #f8f9fa!important;
+    border-radius: 5px;
+}
+
+.desk-container-navbar{
+    margin: 1.5rem;
+    border-radius: 5px;
+}
+
 .desk-container{
     margin: 1.5rem;
     background-color: var(--background-color);
@@ -88,6 +99,7 @@
 
 .quote-card-text{
     height: 100px;
+    text-align: end;
 }
 
 .quote-card-author{
